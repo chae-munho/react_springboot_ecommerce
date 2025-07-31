@@ -1,0 +1,49 @@
+.category-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding:  20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 80px rgba(0, 9, 9, 0.01);
+}
+
+.category-list h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+
+.category-list ul {
+    list-style-type: none;      /* ● 리스트의 기본 점 없애기 */
+    padding: 0;                 /* ● 여백 제거 */
+    display: flex;              /* ● 가로 정렬 */
+    flex-wrap: wrap;           /* ● 줄 넘김 허용 (반응형 처리) */
+    gap: 20px;                 /* ● 아이템 간 간격 */
+    justify-content: center;   /* ● 가운데 정렬 */
+}
+
+.category-list li{
+    flex:  1 1 calc(33.33% - 20px);  /* 한 줄에 3개 → 800px / 3 = 약 266px */
+    max-width: calc(33.33% - 20px);
+}
+.category-list button{
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #f68b1e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+}
+.error-message{
+    color: red;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+.category-list button:hover {
+    background-color: #633d17;
+}
