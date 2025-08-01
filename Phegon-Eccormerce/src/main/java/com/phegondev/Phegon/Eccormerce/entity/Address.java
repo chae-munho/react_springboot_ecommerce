@@ -20,9 +20,15 @@ public class Address {
     private String zipCode;
     private String country;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+    /*
+    @OneToOne(mappedBy = "address") // User 엔티티의 address 필드가 연관관계 주인
+    private User user;
+
+     */
 
     @Column(name = "created_at")
     private final LocalDateTime createdAt = LocalDateTime.now();

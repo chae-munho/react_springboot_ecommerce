@@ -13,6 +13,8 @@ import CategoryProductsPage from './component/pages/CategoryProductsPage';
 import CartPage from './component/pages/CaratPage';
 import RegisterPage from './component/pages/RegisterPage';
 import LoginPage from './component/pages/LoginPage';
+import ProfilePage from './component/pages/ProfilePage';
+import AddressPage from './component/pages/AddressPage';
 
 function App() {
   return (
@@ -33,8 +35,14 @@ function App() {
             <Route path='/cart' element={<CartPage></CartPage>}></Route>
             {/*회원가입 resgister*/}
             <Route path='/register' element={<RegisterPage></RegisterPage>}></Route>
-            {/** */}
+            {/**로그인 */}
             <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+            {/**프로필 페이지 */}
+            <Route path='/profile' element={<ProtectedRoute element={<ProfilePage></ProfilePage>}></ProtectedRoute>}></Route>
+
+            {/*주소 입력 또는 수정 */}
+            <Route path='/add-address' element={<ProtectedRoute element={<AddressPage></AddressPage>}></ProtectedRoute>}></Route>
+            <Route path='/edit-address' element={<ProtectedRoute element={<AddressPage></AddressPage>}></ProtectedRoute>}></Route>
           </Routes>
           <Footer/>
       </CartProvider>

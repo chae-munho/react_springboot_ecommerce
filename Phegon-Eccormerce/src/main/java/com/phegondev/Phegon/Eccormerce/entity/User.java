@@ -41,8 +41,16 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrderItem> orderItemList;
 
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
     private Address address;
+
+
+    /*
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id") //FK는 users 테이블에 존재
+    private Address address;
+     */
 
     @Column(name = "created_at")
     private final LocalDateTime createdAt = LocalDateTime.now();

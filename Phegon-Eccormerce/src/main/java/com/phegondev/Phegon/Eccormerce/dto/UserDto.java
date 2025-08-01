@@ -23,6 +23,4 @@ public class UserDto {
     private String role;
     private List<OrderItemDto> orderItemList;
     private AddressDto address;
-
-
 }

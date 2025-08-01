@@ -165,6 +165,7 @@ export default class ApiService {
     }
 
      /***AUTHEMNTICATION CHECKER */
+     //
      static logout() {
         localStorage.removeItem('token');
         localStorage.removeItem('role')
@@ -182,4 +183,5 @@ export default class ApiService {
 
     
 }
+
 

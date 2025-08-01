@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Response registerUser(UserDto registrationRequest) {
         UserRole role = UserRole.USER;
-        if (registrationRequest.getRole() != null && registrationRequest.getRole().equalsIgnoreCase("admin")) {
+        if (registrationRequest.getRole() != null && registrationRequest.getRole().equalsIgnoreCase("admin")) {  //equalsIgnoreCase는 자바에서 문자열 비교시 대소문자를 구분하지 않고 비교하는 메서드입니다.
             role = UserRole.ADMIN;
         }
         User user = User.builder()
@@ -95,7 +95,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Response getUserInfoAndOrderHistory() {
         User user = getLoginUser();
-        log.info(user.getAddress().getCity());
+
+
         UserDto userDto = entityDtoMapper.mapUserToDtoPlusAddressAndOrderHistory(user);
         return Response.builder()
                 .status(200)
