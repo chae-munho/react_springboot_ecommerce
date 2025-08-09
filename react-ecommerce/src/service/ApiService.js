@@ -1,6 +1,6 @@
 import { wait } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
-
+//response.data에서 data는 응답 본문을 추출한다 즉 body 내용
 
 export default class ApiService {
     static BASE_URL = "http://localhost:8080";

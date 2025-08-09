@@ -10,12 +10,15 @@ import Home from './component/pages/Home';
 import ProductDetailsPage from './component/pages/ProductDetailsPage';
 import CategoryListPage from './component/pages/CategoryListPage';
 import CategoryProductsPage from './component/pages/CategoryProductsPage';
-import CartPage from './component/pages/CaratPage';
+import CartPage from './component/pages/CartPage';
 import RegisterPage from './component/pages/RegisterPage';
 import LoginPage from './component/pages/LoginPage';
 import ProfilePage from './component/pages/ProfilePage';
 import AddressPage from './component/pages/AddressPage';
-
+import AdminPage from './component/admin/AdminPage';
+import AdminCategoryPage from './component/admin/AdminCategory';
+import AddCategory from './component/admin/AddCategoryPage';
+import EditCategory from './component/admin/EditCategory';
 function App() {
   return (
     <BrowserRouter>
@@ -43,6 +46,16 @@ function App() {
             {/*주소 입력 또는 수정 */}
             <Route path='/add-address' element={<ProtectedRoute element={<AddressPage></AddressPage>}></ProtectedRoute>}></Route>
             <Route path='/edit-address' element={<ProtectedRoute element={<AddressPage></AddressPage>}></ProtectedRoute>}></Route>
+
+            {/*관리자 페이지 */}
+            <Route path='/admin' element={<AdminRoute element={<AdminPage></AdminPage>}></AdminRoute>}></Route>
+
+            {/*관리자 카테고리 페이지 */}
+            <Route path='/admin/categories' element={<AdminRoute element={<AdminCategoryPage></AdminCategoryPage>}></AdminRoute>}></Route>
+            {/*관리자 카테고리 추가 페이지 */}
+            <Route path='/admin/add-category' element={<AdminRoute element={<AddCategory></AddCategory>}></AdminRoute>}></Route>
+            {/*관리자 카테고리 수정 페이지 */}
+            <Route path='/admin/edit-category/:categoryId' element={<AdminRoute element={<EditCategory></EditCategory>}></AdminRoute>}></Route>
           </Routes>
           <Footer/>
       </CartProvider>
