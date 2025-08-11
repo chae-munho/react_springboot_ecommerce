@@ -18,7 +18,6 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
                     className={number === currentPage ? 'active' : ''}
                 >
                     {number}
-                
                 </button>
             ))}
         </div>

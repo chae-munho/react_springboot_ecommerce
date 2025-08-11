@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtils jwtUtils;
     private final EntityDtoMapper entityDtoMapper;
+
     @Override
     public Response registerUser(UserDto registrationRequest) {
         UserRole role = UserRole.USER;

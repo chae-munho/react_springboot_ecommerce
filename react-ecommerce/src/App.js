@@ -19,6 +19,9 @@ import AdminPage from './component/admin/AdminPage';
 import AdminCategoryPage from './component/admin/AdminCategory';
 import AddCategory from './component/admin/AddCategoryPage';
 import EditCategory from './component/admin/EditCategory';
+import AdminProductPage from './component/admin/AdminProduectPage';
+import AddProductPage from './component/admin/AddProductPage';
+import EditProductPage from './component/admin/EditProductPage';
 function App() {
   return (
     <BrowserRouter>
@@ -56,6 +59,13 @@ function App() {
             <Route path='/admin/add-category' element={<AdminRoute element={<AddCategory></AddCategory>}></AdminRoute>}></Route>
             {/*관리자 카테고리 수정 페이지 */}
             <Route path='/admin/edit-category/:categoryId' element={<AdminRoute element={<EditCategory></EditCategory>}></AdminRoute>}></Route>
+            {/*관리자 상품 페이지 */}
+            <Route path='/admin/products' element={<AdminRoute element={<AdminProductPage></AdminProductPage>}></AdminRoute>}></Route>
+            {/*관리자 상품 등록 페이지 */}
+            <Route path='/admin/add-product' element={<AdminRoute element={<AddProductPage></AddProductPage>}></AdminRoute>}></Route>
+
+            {/**관리자 상품 수정 페이지 */}
+            <Route path='/admin/edit-product/:productId' element={<AdminRoute element={<EditProductPage></EditProductPage>}></AdminRoute>}></Route>
           </Routes>
           <Footer/>
       </CartProvider>
