@@ -33,8 +33,10 @@ const EditProductPage = () => {
     }, [productId]);
 
     const handleImageChange = (e) =>{
+        
         setImage(e.target.files[0]);
         setImageUrl(URL.createObjectURL(e.target.files[0]));
+        console.log("ImageUrl : ", imageUrl);
     };
 
     
@@ -70,7 +72,8 @@ const EditProductPage = () => {
             <h2>Edit Produc</h2>
             {message && <div className="message">{message}</div>}
             <input type="file" onChange={handleImageChange}/>
-            {imageUrl && <img src={imageUrl} alt={name} />}
+            {/* {imageUrl && <img src={imageUrl} alt={name} />} */}
+            {imageUrl && <img src={`http://localhost:8080${imageUrl}`} alt={name}></img>}
             <select value={categoryId} onChange={(e)=> setCategoryId(e.target.value)}>
                 <option value="">Select Category</option>
                 {categories.map((cat)=>(
